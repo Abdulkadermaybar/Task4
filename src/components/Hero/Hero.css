@@ -1,0 +1,77 @@
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.slider .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
+
+.slider .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 90%;
+    transform: translateY(-50%);
+}
+
+.slider button {
+    background-color: rgba(241, 241, 241, 0.236);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    backdrop-filter: blur(2px);
+}
+
+.slider button svg {
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.slider .indicators {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.slider .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: var(--body-color);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.slider .dot.active {
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width : 992px) {
+    .slider {
+        margin-top: 40px;
+    }
+
+    .slider .controls {
+        gap: 70%;
+    }
+}

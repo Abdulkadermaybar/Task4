@@ -1,0 +1,65 @@
+.accordion {
+    background: #fafafa;
+    width: 420px;
+    margin-top: 48px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+
+.accordion-item .accordion-title {
+    font-weight: 600;
+    padding: 16px;
+    border-bottom: 1px solid #ebebeb;
+    cursor: pointer;
+}
+
+.accordion-item:nth-child(3) .accordion-title {
+    border-bottom: none;
+}
+
+.accordion-item .accordion-title,
+.accordion-item .accordion-content {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.accordion-item.active .accordion-title {
+    font-weight: 500;
+    color: #f35525;
+    padding: 16px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-content {
+    font-weight: 500;
+    padding: 16px;
+    display: none;
+}
+
+.accordion-content a {
+    text-decoration: none;
+    color: #2579fd;
+}
+
+.accordion-content code {
+    font-family: "Courier New", monospace;
+    color: #d63384;
+}
+
+@media screen and (max-width : 992px) {
+    .accordion {
+        width: 300px;
+    }
+
+}

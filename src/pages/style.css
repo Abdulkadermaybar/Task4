@@ -1,0 +1,219 @@
+/* properties page */
+.properties-page .btns-container,
+.properties-page .pagination-container {
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.properties-page .pagination-container ul {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.properties-page .pagination-container ul li {
+    background: var(--font-color);
+    color: var(--body-color);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.properties-page .pagination-container ul li:hover {
+    background: var(--primary-color);
+
+}
+
+
+/* Property Details page */
+.PropertyDetails-page .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: center;
+    padding: 2rem 4rem;
+
+}
+
+.PropertyDetails-page .container p a {
+    text-decoration: none;
+    color: #2579fd;
+}
+
+.PropertyDetails-page .container .accordion {
+    width: 100%;
+}
+
+.PropertyDetails-page .box-container {
+    margin-top: 5.4rem;
+    min-width: 340px;
+    box-shadow: 1px 2px 16px #00000030;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+.PropertyDetails-page .box-container .boxes {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 20px 40px;
+}
+
+.PropertyDetails-page .box-container .boxes .info-box {
+    border-bottom: 1px solid #ebebeb;
+    margin: 16px;
+}
+
+.PropertyDetails-page .box-container .boxes .info-box:nth-child(4) {
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+.PropertyDetails-page .Card,
+.PropertyDetails-page .Card img {
+    background: none;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.PropertyDetails-page .Card .details-box,
+.PropertyDetails-page .Card .footer {
+    display: none;
+}
+
+.Card .body {
+    height: fit-content;
+}
+
+.PropertyDetails-page .BestDeal {
+    margin-top: 2rem;
+}
+
+/* contact Us page */
+.contactUs-page .container {
+    padding: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactUs-page .form-container {
+    display: flex;
+    gap: 4rem;
+}
+
+.contactUs-page .form-container p {
+    margin-block: 16px;
+}
+
+.contactUs-page .form-container form input,
+.contactUs-page .form-container form textarea {
+    width: 460px;
+}
+
+.contactUs-page .form-container .info-boxes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 32px;
+}
+
+.contactUs-page .form-container .info-boxes .info-box {
+    box-shadow: 1px 2px 16px #00000037;
+    padding: 32px 64px;
+    width: 380px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.contactUs-page iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+@media screen and (max-width : 992px) {
+
+    /* properties page */
+    .properties-page .btns-container {
+        gap: 1rem;
+    }
+
+    /* Property Details page */
+    .PropertyDetails-page .container {
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+
+    .box-container .boxes {
+        width: 300px;
+    }
+
+    .PropertyDetails-page .box-container {
+        margin-top: 2rem;
+        min-width: 0px;
+    }
+
+    .PropertyDetails-page .Card,
+    .PropertyDetails-page .Card img {
+        padding: 0px;
+    }
+
+    /* contact Us page */
+    .contactUs-page .container {
+        padding: 1rem;
+        gap: 4rem;
+    }
+
+    .contactUs-page .form-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactUs-page .form-container form input,
+    .contactUs-page .form-container form textarea {
+        width: 100%;
+    }
+    .contactUs-page .form-container .info-boxes .info-box {
+        padding: 16px 32px;
+        width: 100%;
+    }
+}

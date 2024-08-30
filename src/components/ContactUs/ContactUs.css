@@ -1,0 +1,90 @@
+.ContactUs {
+    padding-block: 3rem;
+    position: relative;
+    height: 160vh;
+}
+
+.ContactUs .text-container {
+    text-align: center;
+}
+
+.ContactUs .image-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.ContactUs .text-container h3 {
+    color: var(--body-color);
+    max-width: 280px;
+    text-align: center;
+}
+
+.ContactUs .contact-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 32px;
+}
+
+.ContactUs .contact-info-container .map-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ContactUs .contact-info-container iframe {
+    width: 600px;
+    height: 450px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+.ContactUs .contact-info-container .info-boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 32px;
+}
+
+
+.ContactUs .contact-info-container .info-boxes .info-box{
+    box-shadow: 1px 2px 16px #00000037;
+    padding: 32px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+
+@media screen and (max-width : 992px) {
+    .ContactUs {
+        height: 200vh;
+    }
+
+    .ContactUs .image-container img {
+        height: 40vh;
+    }
+
+    .ContactUs .contact-info-container iframe {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ContactUs .contact-info-container .info-boxes .info-box {
+        width: 100%;
+        padding: 24px 32px;
+        margin-inline: 32px;
+    }
+
+}

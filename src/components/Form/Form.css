@@ -1,0 +1,18 @@
+.form-box {
+    background: var(--body-color);
+    box-shadow: 1px 2px 16px #00000037;
+    padding: 32px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 24px;
+}

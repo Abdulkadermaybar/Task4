@@ -1,0 +1,49 @@
+.slide {
+    height: 100vh;
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide .text-continer {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.slide .text-continer .heade-box {
+    background: var(--body-color);
+    max-width: fit-content;
+    padding-block: 8px;
+    padding-inline: 16px;
+}
+
+.slide .text-continer .heade-box span {
+    color: var(--primary-color);
+}
+
+.slide .text-continer h2 {
+    margin-top: 24px;
+    font-size: 3.6rem;
+    max-width: 360px;
+    color: var(--body-color);
+    line-height: 115%;
+    letter-spacing: 0.2rem;
+}
+
+@media screen and (max-width : 992px) {
+    .slide .text-continer {
+        top: 25%;
+    }
+
+    .slide .text-continer h2 {
+        max-width: 300px;
+    }
+}

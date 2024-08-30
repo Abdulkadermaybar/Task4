@@ -1,0 +1,33 @@
+.pages-header {
+    width: 100%;
+    height: 50vh;
+    margin-top: 100px;
+    background: url('/assets/images/page-heading-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pages-header span {
+    padding: 1rem 2rem;
+    background: var(--body-color);
+    margin-top: 3rem;
+}
+
+.pages-header h2 {
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-weight: 900;
+    color: var(--body-color);
+}
+
+@media screen and (max-width : 992px) {
+    .pages-header {
+        margin-top: 60px;
+    }
+}
