@@ -1,49 +1,81 @@
 .slide {
     height: 100vh;
+    /* ارتفاع الشريحة بالكامل */
     min-width: 100%;
+    /* عرض الشريحة */
     box-sizing: border-box;
+    /* تضمين الحشو والحدود في العرض والارتفاع */
     position: relative;
+    /* تمكين استخدام الخصائص المطلقة للعناصر الداخلية */
+    overflow: hidden;
+    /* إخفاء أي محتوى يتجاوز الحدود */
 }
 
 .slide img {
     height: 100%;
+    /* جعل الصورة تأخذ ارتفاع الشريحة بالكامل */
     width: 100%;
+    /* جعل الصورة تأخذ عرض الشريحة بالكامل */
     object-fit: cover;
+    /* الحفاظ على نسبة العرض إلى الارتفاع */
     display: block;
+    /* إزالة المساحة الفارغة أسفل الصورة */
 }
 
 .slide .text-continer {
     position: absolute;
+    /* تمكين موقع نص على الصورة */
     top: 20%;
+    /* تحديد موقع النص على ارتفاع 20% من أعلى */
     left: 20%;
+    /* تحديد موقع النص على بعد 20% من اليسار */
+    color: var(--body-color);
+    /* استخدام لون مناسب للنص */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* إضافة ظل للنص لزيادة الوضوح */
 }
 
-.slide .text-continer .heade-box {
-    background: var(--body-color);
-    max-width: fit-content;
+.slide .text-continer .header-box {
+    background: rgba(255, 255, 255, 0.8);
+    /* خلفية نصف شفافة */
+    border-radius: 8px;
+    /* زوايا مستديرة للصندوق */
     padding-block: 8px;
+    /* حشو رأسي */
     padding-inline: 16px;
+    /* حشو أفقي */
 }
 
-.slide .text-continer .heade-box span {
+.slide .text-continer .header-box span {
     color: var(--primary-color);
+    /* لون مخصص للنص داخل الصندوق */
 }
 
 .slide .text-continer h2 {
     margin-top: 24px;
+    /* مسافة فوق العنوان */
     font-size: 3.6rem;
+    /* حجم الخط */
     max-width: 360px;
+    /* عرض أقصى للعناصر */
     color: var(--body-color);
-    line-height: 115%;
+    /* لون النص */
+    line-height: 1.15;
+    /* تحسين تباعد الأسطر */
     letter-spacing: 0.2rem;
+    /* تباعد بين الحروف */
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width: 992px) {
     .slide .text-continer {
         top: 25%;
+        /* رفع موقع النص قليلاً في الشاشات الأصغر */
     }
 
     .slide .text-continer h2 {
         max-width: 300px;
+        /* تقليل العرض الأقصى في الشاشات الأصغر */
+        font-size: 2.5rem;
+        /* تقليل حجم الخط في الشاشات الأصغر */
     }
 }

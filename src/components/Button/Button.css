@@ -5,43 +5,61 @@
     color: var(--body-color);
     font-size: 1rem;
     text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
 }
 
 .primary-btn.active .contenaire {
     background: var(--primary-color);
+    color: var(--body-color);
 }
 
 .primary-btn .contenaire {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--font-color);
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 1px 1px 16px #5f5f5f16;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* تحسين الظل */
+    border-radius: 0.25rem;
+}
+
+.primary-btn .contenaire:hover {
+    background: var(--primary-color);
+    color: var(--body-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    /* تحسين الظل عند التمرير */
 }
 
 .primary-btn .contenaire svg {
     width: 20px;
     height: 20px;
-    padding: 16px;
+    padding: 0.5rem;
     border-radius: 50%;
     background: var(--primary-color);
     color: var(--body-color);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    margin-right: 0.75rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 .primary-btn .contenaire span {
-    padding-inline: 32px;
-    padding-block: 8px;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    display: inline-block;
 }
 
-.primary-btn .contenaire:hover {
-    background: var(--primary-color);
+.primary-btn .contenaire svg:hover {
+    background: var(--body-color);
+    color: var(--primary-color);
+}
+
+.btn-rounded {
+    border-radius: 50px;
+    /* إضافة زوايا مستديرة للأزرار التي تحتوي على semicircular */
 }

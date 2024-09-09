@@ -1,50 +1,52 @@
 .accordion {
     background: #fafafa;
-    width: 420px;
-    margin-top: 48px;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* تحسين الظل لإعطاء عمق */
 }
 
-
-.accordion-item .accordion-title {
-    font-weight: 600;
-    padding: 16px;
+.accordion-item {
     border-bottom: 1px solid #ebebeb;
-    cursor: pointer;
 }
 
-.accordion-item:nth-child(3) .accordion-title {
+.accordion-item:last-child {
     border-bottom: none;
+    /* إزالة الخط السفلي من العنصر الأخير */
 }
 
-.accordion-item .accordion-title,
-.accordion-item .accordion-content {
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
+.accordion-title {
+    font-weight: 600;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.accordion-title:hover {
+    background-color: #f8f8f8;
+    /* تحسين التفاعل عند المرور */
 }
 
 .accordion-item.active .accordion-title {
-    font-weight: 500;
+    font-weight: 700;
     color: #f35525;
-    padding: 16px;
-    border-bottom: 1px solid #ebebeb;
-}
-
-.accordion-item.active .accordion-content {
-    display: block;
 }
 
 .accordion-content {
     font-weight: 500;
-    padding: 16px;
+    padding: 1rem;
     display: none;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
 }
 
 .accordion-content a {
@@ -55,11 +57,26 @@
 .accordion-content code {
     font-family: "Courier New", monospace;
     color: #d63384;
+    background-color: #f8f9fa;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    /* تحسين مظهر الكود */
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width: 992px) {
     .accordion {
-        width: 300px;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .accordion {
+        max-width: 100%;
+        padding: 0.5rem;
     }
 
+    .accordion-title,
+    .accordion-content {
+        padding: 0.75rem;
+    }
 }

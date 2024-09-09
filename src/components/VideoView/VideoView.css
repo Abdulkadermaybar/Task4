@@ -1,157 +1,174 @@
-.VideoView {
+.video-view {
     padding-block: 4rem;
+    /* الحشو العمودي */
     position: relative;
-}
-
-.VideoView .image-container img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.content-container {
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.VideoView .text-container {
+    /* تمكين الموقع النسبي للعناصر الداخلية */
     text-align: center;
+    /* محاذاة النص في المركز */
 }
 
-.VideoView .text-container h3 {
+.video-view h3 {
     color: var(--body-color);
-    max-width: 260px;
-    text-align: center;
+    /* لون النص */
+    margin-bottom: 2rem;
+    /* مسافة تحت العنوان */
 }
 
-.VideoView .video-container {
-    padding: 2rem;
+.video-container {
     position: relative;
+    /* تمكين الموقع النسبي للصورة وأيقونة التشغيل */
+    overflow: hidden;
+    /* إخفاء أي محتوى يتجاوز الحدود */
 }
 
-.VideoView .video-container img {
+.video-container img {
     max-width: 100%;
+    /* العرض الأقصى للصورة */
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
-    box-shadow: 1px 1px 16px #0000002e;
+    /* زوايا مستديرة */
+    box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.18);
+    /* إضافة ظل للصورة */
 }
 
-.VideoView .video-container .play-video-icon {
+.play-video-icon {
     position: absolute;
+    /* تمكين الموقع المطلق للأيقونة */
     top: 50%;
+    /* تحديد موقع الأيقونة عمودياً */
     left: 50%;
+    /* تحديد موقع الأيقونة أفقياً */
     transform: translate(-50%, -50%);
-    background: #f35525a6;
+    /* تحريك الأيقونة إلى المركز */
+    background: rgba(243, 85, 37, 0.8);
+    /* خلفية بألوان شفافة */
     width: 80px;
+    /* عرض الأيقونة */
     height: 80px;
+    /* ارتفاع الأيقونة */
     display: flex;
+    /* استخدام flexbox */
     align-items: center;
+    /* محاذاة العناصر عمودياً */
     justify-content: center;
+    /* محاذاة العناصر أفقياً */
     border-radius: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    /* جعل الأيقونة دائرية */
+    cursor: pointer;
+    /* تغيير شكل المؤشر عند المرور فوق الأيقونة */
+    transition: background 0.3s;
+    /* تأثير الانتقال للخلفية */
 }
 
-.VideoView .video-container .play-video-icon svg {
-    color: var(--primary-color);
-    background: var(--body-color);
-    padding: 16px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+.play-video-icon:hover {
+    background: rgba(243, 85, 37, 1);
+    /* تغيير الخلفية عند التمرير */
 }
 
-.VideoView .box-container {
+.play-video-icon i {
+    color: var(--body-color);
+    /* لون الأيقونة */
+    font-size: 24px;
+    /* حجم الأيقونة */
+}
+
+.box-container {
     width: 100%;
+    /* عرض الحاوية */
     padding: 4rem;
+    /* الحشو حول الحاوية */
 }
 
-.VideoView .box-container .boxes {
-    width: 100%;
+.box-container .boxes {
     display: flex;
+    /* استخدام flexbox لتوزيع العناصر */
     flex-direction: row;
+    /* اتجاه العناصر أفقي */
     flex-wrap: wrap;
+    /* تفعيل التفاف العناصر */
     align-content: center;
+    /* محاذاة العناصر في المركز */
     justify-content: center;
-    align-items: center;
+    /* محاذاة العناصر أفقياً */
     gap: 6rem;
+    /* الفجوة بين العناصر */
 }
 
-.VideoView .box-container .boxes .box {
+.box-container .boxes .box {
     display: flex;
+    /* استخدام flexbox لاحتواء العناصر */
     flex-direction: row;
+    /* اتجاه العناصر أفقي */
     align-items: center;
+    /* محاذاة العناصر عمودياً */
     gap: 16px;
-    position: relative;
+    /* الفجوة بين العناصر */
     background: #ffeee9;
+    /* خلفية الصندوق */
     padding: 20px 40px;
+    /* الحشو حول النص */
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    /* زوايا مستديرة للصندوق */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* إضافة ظل للصندوق */
+    transition: transform 0.2s;
+    /* تأثير الانتقال عند التمرير */
 }
 
-.VideoView .box-container .boxes .box span#dot {
+.box-container .boxes .box:hover {
+    transform: translateY(-5px);
+    /* رفع الصندوق عند التمرير */
+}
+
+.box-container .boxes .box span#dot {
     width: 40px;
+    /* عرض النقطة */
     height: 40px;
+    /* ارتفاع النقطة */
     background: var(--primary-color);
+    /* لون النقطة */
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    /* جعل النقطة دائرية */
     position: absolute;
+    /* تمكين الموقع المطلق للنقطة */
     right: -16px;
+    /* تحديد الموقع على اليمين */
     top: -16px;
+    /* تحديد الموقع في الأعلى */
 }
 
-.VideoView .box-container .boxes .box span {
+.box-container .boxes .box span {
     color: var(--primary-color);
+    /* لون النص */
     font-size: 2rem;
+    /* حجم النص */
     font-weight: 800;
+    /* سمك الخط */
 }
 
-.VideoView .box-container .boxes .box p {
+.box-container .boxes .box p {
     font-weight: 600;
+    /* سمك الخط للنص الفرعي */
 }
 
-@media screen and (max-width : 992px) {
-    .VideoView .image-container img {
-        height: 40vh;
-    }
-
-    .VideoView .video-container {
+/* استجابة محسنة */
+@media screen and (max-width: 992px) {
+    .video-container {
         padding: 2rem 1rem;
+        /* تقليل الحشو */
     }
 
-    .VideoView .text-container h3 {
+    .video-view h3 {
         max-width: 300px;
+        /* العرض الأقصى للنص */
     }
 
-    .VideoView .box-container {
+    .box-container {
         padding: 2rem;
+        /* تقليل الحشو */
     }
 
-    .VideoView .box-container .boxes .box {
+    .box-container .boxes .box {
         width: 80%;
+        /* جعل عرض الصناديق أكبر في الشاشات الصغيرة */
     }
 }

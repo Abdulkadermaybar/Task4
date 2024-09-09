@@ -1,5 +1,6 @@
-.Featured {
+.featured {
     height: 100vh;
+    /* Consider adjusting this for better responsiveness */
     padding: 8rem;
     display: flex;
     justify-content: center;
@@ -9,22 +10,18 @@
     align-content: center;
 }
 
-.Featured .image-container {
+.image-container {
     max-width: fit-content;
     position: relative;
 }
 
-.Featured .image-container .icon-box {
+.icon-box {
     position: absolute;
     z-index: 20;
     bottom: 60px;
     left: -60px;
     background: var(--primary-color);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 120px;
     height: 120px;
     display: flex;
@@ -32,10 +29,9 @@
     justify-content: center;
 }
 
-.Featured .image-container img:nth-child(1) {
+.image-container img {
     max-width: 300px;
 }
-
 
 .text-container span::before {
     content: '| ';
@@ -54,51 +50,49 @@
     margin-top: 16px;
 }
 
-
-
-.Featured .box-container {
-    box-shadow: 1px 2px 16px #00000030;
+.box-container {
+    box-shadow: 1px 2px 16px rgba(0, 0, 0, 0.18);
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
 }
 
-.Featured .box-container .boxes {
+.box-container .boxes {
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: space-around;
     padding: 20px 40px;
 }
 
-.Featured .box-container .boxes .info-box {
+.box-container .boxes .info-box {
     border-bottom: 1px solid #ebebeb;
 }
 
-.Featured .box-container .boxes .info-box:nth-child(4) {
+.box-container .boxes .info-box:last-child {
     border-bottom: none;
-    padding-bottom: 0px;
+    /* Using :last-child instead of :nth-child */
+    padding-bottom: 0;
 }
 
-@media screen and (max-width : 992px) {
-    .Featured {
-        height: 100%;
+@media screen and (max-width: 992px) {
+    .featured {
+        height: auto;
+        /* Changed for better responsiveness */
         padding-block: 8rem;
     }
 
-    .Featured .image-container .icon-box {
+    .icon-box {
         bottom: -20px;
         left: -20px;
     }
 
-    .Featured .text-container {
+    .text-container {
         margin-top: 32px;
     }
 
-    .Featured .box-container .boxes {
-        width: 300px;
+    .box-container .boxes {
+        width: 100%;
+        /* Changed to make it responsive */
+        max-width: 300px;
+        /* Max width for smaller screens */
     }
 }

@@ -2,32 +2,49 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    /* Space between label and input */
+}
 
+.input-box label {
+    font-weight: bold;
+    /* Make the label bold for better readability */
+    font-size: 0.9rem;
+    /* Adjust font size for clarity */
+    color: var(--secondary-color);
+    /* Use a secondary color for labels */
 }
 
 .input-box input,
 .input-box textarea {
-    width: 300px;
+    width: 100%;
+    /* Allow input to take full width */
     border: none;
     outline: none;
     background: #f6f6f6;
+    /* Light gray background */
     padding: 10px 20px;
+    /* Padding inside input */
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: border 0.3s ease;
+    /* Smooth border transition */
 }
 
 .input-box input:focus,
 .input-box textarea:focus {
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-color);
+    /* Change border color on focus */
+    background: #fff;
+    /* Change background on focus */
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width: 992px) {
 
-    .ContactUs .contact-info-container .form-box .input-box input,
-    .ContactUs .contact-info-container .form-box .input-box textarea {
-        width: 220px;
+    .input-box input,
+    .input-box textarea {
+        width: 100%;
+        /* Full width on smaller screens */
     }
 }

@@ -1,20 +1,22 @@
+import PropTypes from "prop-types";
 import "./Button.css";
 
-const Button = ({ text, icon, semicircular, onClick, active }) => {
+const Button = ({ text, onClick, semicircular, active }) => {
   return (
     <button
       onClick={onClick}
-      className={`primary-btn ${active ? "active" : ""}`}
+      className={`btn ${semicircular ? "btn-rounded" : ""} ${active ? "btn-primary" : "btn-outline-primary"}`}
     >
-      <div
-        className="contenaire"
-        style={{ borderRadius: semicircular ? "200px" : "4px" }}
-      >
-        {icon ? <i className="fa-solid fa-calendar"></i> : ""}
-        <span>{text}</span>
-      </div>
+      {text}
     </button>
   );
+};
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  semicircular: PropTypes.bool,
+  active: PropTypes.bool,
 };
 
 export default Button;

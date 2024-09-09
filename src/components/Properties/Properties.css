@@ -1,5 +1,8 @@
 .Properties {
-    padding-block: 4rem;
+    padding: 4rem 0;
+    /* تحسين الحشو العلوي والسفلي */
+    background-color: #f9f9f9;
+    /* إضافة لون خلفية خفيف */
 }
 
 .Properties .text-container {
@@ -8,26 +11,56 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 2rem;
+    /* تحسين التباعد السفلي */
 }
 
-.Properties .text-container h3 {
-    max-width: 280px;
+.Properties .text-container h2 {
+    font-size: 2rem;
+    /* ضبط حجم الخط لعنوان القسم */
+    color: var(--primary-color);
+    /* استخدام لون أساسي لزيادة التركيز */
 }
 
-.card-container {
-    width: 100%;
-    padding: 4rem;
+.Properties .text-container p {
+    color: #555;
+    /* لون نص توضيحي أغمق */
+    max-width: 600px;
+    /* تحديد عرض أقصى للنص */
+    line-height: 1.5;
+    /* تحسين تباعد الأسطر */
+}
+
+.Properties .row {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    /* السماح بلف العناصر */
     justify-content: center;
+    /* محاذاة العناصر في المنتصف */
     gap: 32px;
+    /* تباعد بين العناصر */
 }
 
-@media screen and (max-width : 992px) {
-    .card-container {
-        padding: 0rem;
-        padding-block: 4rem;
+.Properties .col-md-4 {
+    flex: 1 1 300px;
+    /* جعل الأعمدة مرنة مع حد أدنى من العرض */
+    max-width: 350px;
+    /* تحديد عرض أقصى للأعمدة */
+}
+
+@media screen and (max-width: 992px) {
+    .Properties .text-container {
+        margin-bottom: 1rem;
+        /* تقليل التباعد في الشاشات الصغيرة */
+    }
+
+    .Properties .row {
+        padding: 0;
+        /* إزالة الحشو الزائد */
+    }
+
+    .Properties .col-md-4 {
+        flex: 1 1 100%;
+        /* جعل الأعمدة تأخذ العرض الكامل في الشاشات الصغيرة */
     }
 }

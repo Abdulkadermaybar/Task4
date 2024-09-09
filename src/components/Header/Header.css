@@ -1,33 +1,58 @@
-.pages-header {
+.header {
     width: 100%;
     height: 50vh;
+    /* Height of the header section */
     margin-top: 100px;
-    background: url('/assets/images/page-heading-bg.jpg');
-    background-position: center;
-    background-size: cover;
+    /* Space above the header */
+    background: url('/assets/images/page-heading-bg.jpg') center/cover no-repeat;
+    /* Background image properties */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Center content vertically */
     align-items: center;
+    /* Center content horizontally */
     text-align: center;
+    /* Center text */
     text-transform: uppercase;
-}
-
-.pages-header span {
-    padding: 1rem 2rem;
-    background: var(--body-color);
-    margin-top: 3rem;
-}
-
-.pages-header h2 {
-    font-size: 3rem;
-    margin-top: 1rem;
-    font-weight: 900;
+    /* Uppercase for all text */
     color: var(--body-color);
+    /* Use body color for text */
 }
 
-@media screen and (max-width : 992px) {
-    .pages-header {
+.header h2 {
+    font-size: 3rem;
+    /* Large font size for the title */
+    margin: 1rem 0;
+    /* Margin above and below the title */
+    font-weight: 900;
+    /* Bold font weight */
+}
+
+.header p {
+    margin-top: 1rem;
+    /* Space above the subtitle */
+    font-size: 1.25rem;
+    /* Slightly larger font size for better visibility */
+    color: rgba(255, 255, 255, 0.8);
+    /* Lighter color for the subtitle */
+}
+
+@media screen and (max-width: 992px) {
+    .header {
         margin-top: 60px;
+        /* Adjust margin for smaller screens */
+        height: 40vh;
+        /* Reduce height for smaller screens */
+    }
+
+    .header h2 {
+        font-size: 2.5rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .header p {
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
     }
 }

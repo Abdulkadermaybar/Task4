@@ -1,58 +1,36 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { sliderData } from "../../constants";
-import Slide from "../Slide/Slide";
 import "./Hero.css";
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
 
-  const slides = useRef(null);
-
-  useEffect(() => {
-    const dots = document.querySelectorAll(".dot");
-
-    slides.current.style.transform = `translateX(${-index * 100}%)`;
-    dots.forEach((dot) => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-  }, [index]);
-
   return (
-    <div className="slider" id="Home">
-      <div className="slides" ref={slides}>
-        {sliderData.map((slide, index) => {
-          return <Slide key={index} img={slide.image} text={slide.text} />;
-        })}
-      </div>
-
-      <div className="controls">
+    <section className="hero">
+      <div className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          {sliderData.map((slide, idx) => (
+            <div key={idx} className={`carousel-item ${idx === index ? "active" : ""}`}>
+              <img src={slide.image} className="d-block w-100" alt={slide.text} />
+            </div>
+          ))}
+        </div>
         <button
-          className="prev"
-          onClick={() =>
-            setIndex((index - 1 + sliderData.length) % sliderData.length)
-          }
+          className="carousel-control-prev"
+          type="button"
+          onClick={() => setIndex((index - 1 + sliderData.length) % sliderData.length)}
         >
-          <i className="fa-solid fa-chevron-left"></i>
+          <span className="carousel-control-prev-icon"></span>
         </button>
-
         <button
-          className="next"
+          className="carousel-control-next"
+          type="button"
           onClick={() => setIndex((index + 1) % sliderData.length)}
         >
-          <i className="fa-solid fa-chevron-right"></i>
+          <span className="carousel-control-next-icon"></span>
         </button>
       </div>
-
-      <div className="indicators">
-        {[...Array(sliderData.length)].map((_, dotIndex) => (
-          <span
-            key={dotIndex}
-            className={`dot ${dotIndex === index ? "active" : ""}`}
-            data-slide={dotIndex}
-            onClick={() => setIndex(dotIndex)}
-          ></span>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

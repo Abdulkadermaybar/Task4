@@ -7,13 +7,15 @@ import VideoView from "../components/VideoView/VideoView";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-page">
       <Hero />
-      <Featured />
-      <VideoView />
-      <BestDeal />
-      <Properties />
-      <ContactUs />
+      <div className="container">
+        <Featured />
+        <VideoView />
+        <BestDeal />
+        <Properties />
+        <ContactUs />
+      </div>
     </div>
   );
 };

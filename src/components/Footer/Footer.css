@@ -2,20 +2,24 @@ footer {
     width: 100%;
 }
 
-footer .footer-container {
+.footer {
     background: var(--font-color);
     color: var(--body-color);
     padding: 2rem;
+    text-align: center;
+    /* Center text for better alignment */
 }
 
-footer .footer-container p {
-    margin-left: 8rem;
+.footer p {
+    margin: 0;
+    /* Remove default margin */
 }
 
-@media screen and (max-width : 992px) {
-    footer .footer-container p {
-        margin-left: 1rem;
-        text-align: center;
-        line-height: 300%;
+@media screen and (max-width: 992px) {
+    .footer p {
+        margin-left: 0;
+        /* Remove left margin for smaller screens */
+        line-height: 1.5;
+        /* Adjust line-height for better readability */
     }
 }

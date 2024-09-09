@@ -1,92 +1,72 @@
-.Card {
+.card {
     background: #fafafa;
     padding: 24px;
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
     width: 360px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-.Card .header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card:hover {
+    transform: scale(1.02);
 }
 
-.Card img {
+.card img {
     max-width: 100%;
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
 }
 
-.Card .body {
-    height: 300px;
-    padding-block: 24px;
+.card-body {
+    padding: 24px 0;
     border-bottom: 1px solid #ededed;
 }
 
-.Card .body .prise-box {
+.prise-box {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
     justify-content: space-between;
     align-items: center;
 }
 
-.Card .body .prise-box .type {
+.prise-box .type {
     background: #fbd9cf;
     padding: 8px 16px;
     border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
     font-weight: 600;
 }
 
-.Card .body .prise-box .prise {
+.prise-box .prise {
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--primary-color);
 }
 
-.Card .body p.location {
-    margin-block: 24px;
+.card-text.location {
+    margin: 24px 0;
     font-size: 1.2rem;
     font-weight: 800;
 }
 
-.Card .body .details-box {
-    max-width: 100%;
+.details-box {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 32px;
-    row-gap: 8px;
+    gap: 8px 32px;
+    /* gap between rows and columns */
 }
 
-.Card .body .details-box p {
+.details-box p {
     text-transform: capitalize;
     color: rgb(131, 131, 131);
     font-weight: 500;
 }
 
-.Card .body .details-box p span {
+.details-box p span {
     color: #000;
     font-weight: 700;
 }
 
-.Card .footer {
+.footer {
     display: flex;
-    align-items: center;
     justify-content: center;
     padding-top: 24px;
 }

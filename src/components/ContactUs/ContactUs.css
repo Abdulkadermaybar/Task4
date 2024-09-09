@@ -1,25 +1,27 @@
-.ContactUs {
-    padding-block: 3rem;
+.contact-us {
+    padding: 3rem 0;
     position: relative;
     height: 160vh;
+    /* Consider changing to a more responsive unit */
 }
 
-.ContactUs .text-container {
+.text-container {
     text-align: center;
 }
 
-.ContactUs .image-container img {
+.image-container img {
     width: 100%;
     object-fit: cover;
 }
 
-.ContactUs .text-container h3 {
+.text-container h3 {
     color: var(--body-color);
     max-width: 280px;
-    text-align: center;
+    margin: 0 auto;
+    /* Center the heading */
 }
 
-.ContactUs .contact-info-container {
+.contact-info-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -29,24 +31,23 @@
     gap: 32px;
 }
 
-.ContactUs .contact-info-container .map-box {
+.map-box {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
 }
 
-.ContactUs .contact-info-container iframe {
-    width: 600px;
+.contact-info-container iframe {
+    width: 100%;
+    /* Make it responsive */
+    max-width: 600px;
     height: 450px;
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
+    border: none;
+    /* Added for better appearance */
 }
 
-.ContactUs .contact-info-container .info-boxes {
+.info-boxes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -55,36 +56,39 @@
     gap: 32px;
 }
 
-
-.ContactUs .contact-info-container .info-boxes .info-box{
-    box-shadow: 1px 2px 16px #00000037;
+.info-box {
+    box-shadow: 1px 2px 16px rgba(0, 0, 0, 0.22);
     padding: 32px;
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    transition: transform 0.3s;
 }
 
+.info-box:hover {
+    transform: scale(1.02);
+}
 
-@media screen and (max-width : 992px) {
-    .ContactUs {
-        height: 200vh;
+@media screen and (max-width: 992px) {
+    .contact-us {
+        height: auto;
+        /* Changed for better responsiveness */
     }
 
-    .ContactUs .image-container img {
+    .image-container img {
         height: 40vh;
+        /* This can also be adjusted based on design */
     }
 
-    .ContactUs .contact-info-container iframe {
-        width: 300px;
+    .contact-info-container iframe {
+        width: 100%;
+        /* Make it responsive */
+        max-width: 300px;
         height: 300px;
     }
 
-    .ContactUs .contact-info-container .info-boxes .info-box {
+    .info-box {
         width: 100%;
         padding: 24px 32px;
-        margin-inline: 32px;
+        margin-inline: 0;
+        /* Remove margin for smaller screens */
     }
-
 }

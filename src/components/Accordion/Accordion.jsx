@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "./Accordion.css";
 
 const Accordion = ({ questions }) => {
@@ -9,27 +10,35 @@ const Accordion = ({ questions }) => {
   };
 
   return (
-    <>
-      <div className="accordion">
-        {questions.map((question, index) => (
+    <div className="accordion container">
+      {questions.map((question, index) => (
+        <div
+          key={index}
+          className={`accordion-item ${activeIndex === index ? "active" : ""}`}
+        >
           <div
-            key={index}
-            className={`accordion-item ${
-              activeIndex === index ? "active" : ""
-            }`}
+            className="accordion-title btn btn-outline-primary w-100 mb-2"
+            onClick={() => handleToggle(index)}
           >
-            <div
-              className="accordion-title"
-              onClick={() => handleToggle(index)}
-            >
-              {question.title}
-            </div>
-            <div className={`accordion-content`} dangerouslySetInnerHTML={{ __html: question.content }} />
+            {question.title}
           </div>
-        ))}
-      </div>
-    </>
+          <div
+            className={`accordion-content ${activeIndex === index ? "show" : ""}`}
+            dangerouslySetInnerHTML={{ __html: question.content }}
+          />
+        </div>
+      ))}
+    </div>
   );
+};
+
+Accordion.propTypes = {
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Accordion;

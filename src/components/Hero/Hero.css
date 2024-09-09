@@ -1,77 +1,69 @@
-.slider {
+.hero {
     position: relative;
     width: 100%;
     margin: auto;
     overflow: hidden;
     margin-top: 100px;
+    /* Space above the hero section */
 }
 
-.slider .slides {
+.carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    -webkit-transition: transform 0.5s ease-in-out;
-    -moz-transition: transform 0.5s ease-in-out;
-    -ms-transition: transform 0.5s ease-in-out;
-    -o-transition: transform 0.5s ease-in-out;
+    /* Smooth transition for sliding */
 }
 
-.slider .controls {
+.carousel-item {
+    width: 100%;
+    /* Each slide takes full width */
+}
+
+.carousel img {
+    width: 100%;
+    /* Image takes full width of the carousel */
+    object-fit: cover;
+    /* Cover the entire area of the slide */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
     top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 90%;
     transform: translateY(-50%);
-}
-
-.slider button {
-    background-color: rgba(241, 241, 241, 0.236);
+    /* Center vertically */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent background */
     border: none;
-    color: white;
+    /* No border */
+    border-radius: 50%;
+    /* Circular buttons */
     padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    backdrop-filter: blur(2px);
+    /* Padding for buttons */
+    z-index: 10;
+    /* Ensure buttons are on top */
 }
 
-.slider button svg {
-    font-size: 1.2rem;
-    width: 24px;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent;
+    /* Remove default background */
 }
 
-.slider .indicators {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Darker on hover */
 }
 
-.slider .dot {
-    height: 8px;
-    width: 8px;
-    margin: 0 5px;
-    background-color: var(--body-color);
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.slider .dot.active {
-    background-color: var(--primary-color);
-}
-
-@media screen and (max-width : 992px) {
-    .slider {
+@media screen and (max-width: 992px) {
+    .hero {
         margin-top: 40px;
+        /* Reduce space for smaller screens */
     }
 
-    .slider .controls {
-        gap: 70%;
+    .carousel-control-prev,
+    .carousel-control-next {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
     }
 }

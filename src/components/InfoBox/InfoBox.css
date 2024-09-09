@@ -1,48 +1,56 @@
 .info-box {
     display: flex;
+    align-items: center;
+    /* Center items vertically */
     padding-bottom: 32px;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 24px;
     border-bottom: 1px solid #ebebeb;
+    /* Subtle bottom border */
 }
 
 .info-box img {
     object-fit: contain;
+    /* Ensure the image fits nicely */
+    max-width: 50px;
+    /* Set a maximum width for the icon */
+    max-height: 50px;
+    /* Set a maximum height for the icon */
 }
 
-.info-box img.hidden {
-    display: none;
-}
-
-.info-box .text.col {
+.info-box .text {
     display: flex;
     flex-direction: column;
-}
-
-.info-box .text.row {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-}
-
-.info-box .text.row h6 {
-    text-align: end;
+    /* Column layout for text */
 }
 
 .info-box .text h6 {
     font-size: 1.2rem;
+    /* Title font size */
+    margin: 0;
+    /* Remove default margin */
+    font-weight: bold;
+    /* Make title bold */
 }
 
 .info-box .text p {
     color: #a7a7a7;
+    /* Subtle gray for description */
+    margin: 0;
+    /* Remove default margin */
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width: 992px) {
     .info-box {
         padding-block: 24px;
+        /* Reduce padding on smaller screens */
+        flex-direction: column;
+        /* Stack items on smaller screens */
+    }
+
+    .info-box img {
+        margin-bottom: 16px;
+        /* Add space between image and text */
     }
 }

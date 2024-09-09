@@ -1,3 +1,13 @@
+/* Global Styles */
+:root {
+    --primary-color: #ff6347;
+    /* Adjust to your primary color */
+    --secondary-color: #f8f9fa;
+    /* Adjust to your secondary color */
+    --font-color: #333;
+    --body-color: #fff;
+}
+
 /* properties page */
 .properties-page .btns-container,
 .properties-page .pagination-container {
@@ -13,6 +23,8 @@
 .properties-page .pagination-container ul {
     display: flex;
     gap: 0.5rem;
+    padding: 0;
+    list-style: none;
 }
 
 .properties-page .pagination-container ul li {
@@ -24,22 +36,12 @@
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 .properties-page .pagination-container ul li:hover {
     background: var(--primary-color);
-
 }
-
 
 /* Property Details page */
 .PropertyDetails-page .container {
@@ -48,12 +50,11 @@
     align-items: start;
     justify-content: center;
     padding: 2rem 4rem;
-
 }
 
 .PropertyDetails-page .container p a {
     text-decoration: none;
-    color: #2579fd;
+    color: var(--primary-color);
 }
 
 .PropertyDetails-page .container .accordion {
@@ -63,31 +64,26 @@
 .PropertyDetails-page .box-container {
     margin-top: 5.4rem;
     min-width: 340px;
-    box-shadow: 1px 2px 16px #00000030;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
+    background: var(--secondary-color);
 }
 
 .PropertyDetails-page .box-container .boxes {
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: space-around;
     padding: 20px 40px;
 }
 
 .PropertyDetails-page .box-container .boxes .info-box {
     border-bottom: 1px solid #ebebeb;
-    margin: 16px;
+    margin: 16px 0;
 }
 
-.PropertyDetails-page .box-container .boxes .info-box:nth-child(4) {
+.PropertyDetails-page .box-container .boxes .info-box:last-child {
     border-bottom: none;
-    padding-bottom: 0px;
 }
 
 .PropertyDetails-page .Card,
@@ -96,10 +92,6 @@
     width: 100%;
     padding: 0;
     border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
 }
 
 .PropertyDetails-page .Card .details-box,
@@ -115,7 +107,7 @@
     margin-top: 2rem;
 }
 
-/* contact Us page */
+/* Contact Us page */
 .contactUs-page .container {
     padding: 5rem;
     width: 100%;
@@ -138,41 +130,43 @@
 .contactUs-page .form-container form input,
 .contactUs-page .form-container form textarea {
     width: 460px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.contactUs-page .form-container form input:focus,
+.contactUs-page .form-container form textarea:focus {
+    border: 1px solid var(--primary-color);
+    outline: none;
 }
 
 .contactUs-page .form-container .info-boxes {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 2rem;
     gap: 32px;
+    margin-top: 2rem;
 }
 
 .contactUs-page .form-container .info-boxes .info-box {
-    box-shadow: 1px 2px 16px #00000037;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
     padding: 32px 64px;
     width: 380px;
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    background: var(--secondary-color);
 }
 
 .contactUs-page iframe {
     width: 100%;
     height: 500px;
     border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
 }
 
-@media screen and (max-width : 992px) {
+/* Media queries */
+@media screen and (max-width: 992px) {
 
-    /* properties page */
+    /* Properties page */
     .properties-page .btns-container {
         gap: 1rem;
     }
@@ -183,28 +177,23 @@
         padding: 2rem;
     }
 
-    .box-container .boxes {
-        width: 300px;
-    }
-
     .PropertyDetails-page .box-container {
         margin-top: 2rem;
-        min-width: 0px;
+        min-width: 0;
     }
 
     .PropertyDetails-page .Card,
     .PropertyDetails-page .Card img {
-        padding: 0px;
+        padding: 0;
     }
 
-    /* contact Us page */
+    /* Contact Us page */
     .contactUs-page .container {
         padding: 1rem;
         gap: 4rem;
     }
 
     .contactUs-page .form-container {
-        display: flex;
         flex-wrap: wrap;
     }
 
@@ -212,6 +201,7 @@
     .contactUs-page .form-container form textarea {
         width: 100%;
     }
+
     .contactUs-page .form-container .info-boxes .info-box {
         padding: 16px 32px;
         width: 100%;

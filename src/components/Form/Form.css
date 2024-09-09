@@ -1,18 +1,40 @@
-.form-box {
+.form {
     background: var(--body-color);
-    box-shadow: 1px 2px 16px #00000037;
+    box-shadow: 1px 2px 16px rgba(0, 0, 0, 0.22);
     padding: 32px;
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}
-
-.form-box form {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
     gap: 24px;
+    /* Maintain spacing between elements */
+}
+
+.form .form-control {
+    width: 100%;
+    /* Ensure inputs take full width */
+    border: 1px solid #ced4da;
+    /* Add a border for better visibility */
+    border-radius: 4px;
+    /* Ensure input corners match overall style */
+    padding: 12px;
+    /* Add padding for better usability */
+}
+
+.form .form-control::placeholder {
+    color: #6c757d;
+    /* Change placeholder color for better readability */
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    /* Adjust button padding for better appearance */
+    border-radius: 4px;
+    /* Match button corners with input fields */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Darken button on hover */
 }
